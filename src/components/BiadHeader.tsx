@@ -20,7 +20,7 @@ const BiadHeader = ({ isDark, onToggleTheme }: BiadHeaderProps) => {
           src={biadLogo}
           alt="BIAD Logo"
           className="h-[80px] md:h-[115px] w-auto"
-          style={{ mixBlendMode: isDark ? 'screen' : 'multiply' }}
+          style={{ mixBlendMode: isDark ? 'difference' : 'multiply' }}
         />
       </div>
 
