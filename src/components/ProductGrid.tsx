@@ -11,20 +11,21 @@ import blackPolo from "@/assets/products/black-polo.jpg";
 export interface Product {
   id: string;
   name: string;
+  variant?: string;
   price: number;
   image: string;
 }
 
 const products: Product[] = [
-  { id: "1", name: "BIAD Long Sleeve Set — Black", price: 38000, image: blackLongsleeveSet },
-  { id: "2", name: "BIAD Long Sleeve — White/Grey", price: 22000, image: whiteGreyLongsleeve },
-  { id: "3", name: "BIAD Tee + Shorts — Black", price: 35000, image: blackTeeShorts },
-  { id: "4", name: "BIAD Tee + Shorts — Grey", price: 35000, image: greyTeeShorts },
-  { id: "5", name: '"Nikes Na Me Na Swag" Graphic Tee', price: 18500, image: graphicTee },
-  { id: "6", name: "BIAD Polo — Maroon", price: 19000, image: maroonPolo },
-  { id: "7", name: "BIAD Polo — White", price: 19000, image: whitePolo },
-  { id: "8", name: "BIAD Polo — White + Red", price: 21000, image: whiteRedPolo },
-  { id: "9", name: "BIAD Polo — Black", price: 19000, image: blackPolo },
+  { id: "1", name: "BIAD Long Sleeve Set", variant: "Black", price: 38000, image: blackLongsleeveSet },
+  { id: "2", name: "BIAD Long Sleeve", variant: "White / Grey", price: 22000, image: whiteGreyLongsleeve },
+  { id: "3", name: "BIAD Tee + Shorts", variant: "Black", price: 35000, image: blackTeeShorts },
+  { id: "4", name: "BIAD Tee + Shorts", variant: "Grey", price: 35000, image: greyTeeShorts },
+  { id: "5", name: "Nikes Na Me Na Swag", variant: "Graphic Tee", price: 18500, image: graphicTee },
+  { id: "6", name: "BIAD Polo", variant: "Maroon", price: 19000, image: maroonPolo },
+  { id: "7", name: "BIAD Polo", variant: "White", price: 19000, image: whitePolo },
+  { id: "8", name: "BIAD Polo", variant: "White + Red", price: 21000, image: whiteRedPolo },
+  { id: "9", name: "BIAD Polo", variant: "Black", price: 19000, image: blackPolo },
 ];
 
 interface ProductGridProps {
@@ -33,34 +34,46 @@ interface ProductGridProps {
 
 const ProductGrid = ({ onAddToCart }: ProductGridProps) => {
   return (
-    <section id="shop" className="w-full max-w-7xl mx-auto px-4 py-16">
-      <h2 className="font-heading text-5xl md:text-6xl text-foreground text-center mb-12 tracking-wider">
-        THE DROP
+    <section id="shop" className="w-full px-4 md:px-10 pb-24 bg-background">
+      <p className="font-body font-normal text-[10px] tracking-[8px] text-muted-foreground text-center pt-24 uppercase mb-2">
+        CURRENT DROP
+      </p>
+      <h2 className="font-heading text-[clamp(36px,5vw,58px)] tracking-[4px] text-foreground text-center leading-none pb-[70px]">
+        THE COLLECTION
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-9 max-w-[1280px] mx-auto">
         {products.map((product) => (
           <div
             key={product.id}
-            className="product-card border border-border bg-card p-4 flex flex-col"
+            className="product-card border border-border bg-card cursor-pointer overflow-hidden"
           >
-            <div className="w-full aspect-[4/5] overflow-hidden mb-4 bg-secondary">
+            <div className="w-full aspect-square overflow-hidden bg-card flex items-center justify-center">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-400 hover:scale-105"
                 loading="lazy"
               />
             </div>
-            <h3 className="font-product text-2xl text-foreground mb-1">{product.name}</h3>
-            <p className="font-product text-xl text-primary mb-4">
-              ₦{product.price.toLocaleString()}
-            </p>
-            <button
-              onClick={() => onAddToCart(product)}
-              className="stamp-btn mt-auto"
-            >
-              ADD TO CART
-            </button>
+            <div className="p-[20px_18px_18px]">
+              <h3 className="font-body font-semibold text-sm tracking-[2px] uppercase text-foreground mb-[3px]">
+                {product.name}
+              </h3>
+              {product.variant && (
+                <p className="font-body text-xs tracking-[2px] text-muted-foreground mb-2">
+                  {product.variant}
+                </p>
+              )}
+              <p className="font-body font-normal text-sm tracking-[2px] text-muted-foreground mb-4">
+                ₦{product.price.toLocaleString()}
+              </p>
+              <button
+                onClick={() => onAddToCart(product)}
+                className="w-full font-body font-semibold text-[10px] tracking-[4px] uppercase text-foreground bg-transparent border border-border py-[11px] transition-all duration-300 hover:bg-foreground hover:text-background hover:border-foreground"
+              >
+                ADD TO CART
+              </button>
+            </div>
           </div>
         ))}
       </div>

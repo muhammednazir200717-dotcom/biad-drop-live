@@ -1,8 +1,11 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import BiadHeader from "@/components/BiadHeader";
+import Ticker from "@/components/Ticker";
 import BiadHero from "@/components/BiadHero";
 import ProductGrid from "@/components/ProductGrid";
 import type { Product } from "@/components/ProductGrid";
+import DeliverySection from "@/components/DeliverySection";
+import ContactSection from "@/components/ContactSection";
 import EightBallCart from "@/components/EightBallCart";
 import type { CartItem } from "@/components/EightBallCart";
 import BiadFooter from "@/components/BiadFooter";
@@ -10,6 +13,11 @@ import BiadFooter from "@/components/BiadFooter";
 const Index = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [shakeTrigger, setShakeTrigger] = useState(0);
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
 
   const handleAddToCart = useCallback((product: Product) => {
     setCart((prev) => {
@@ -30,10 +38,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      <div className="noise-overlay" />
-      <BiadHeader />
+      <BiadHeader isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} />
+      <Ticker />
       <BiadHero />
       <ProductGrid onAddToCart={handleAddToCart} />
+      <DeliverySection />
+      <ContactSection />
       <BiadFooter />
       <EightBallCart items={cart} onRemove={handleRemove} triggerShake={shakeTrigger} />
     </div>
