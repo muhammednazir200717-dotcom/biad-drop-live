@@ -19,7 +19,7 @@ const BiadHeader = ({ isDark, onToggleTheme }: BiadHeaderProps) => {
         <img
           src={biadLogo}
           alt="BIAD Logo"
-          className="h-[80px] md:h-[115px] w-auto"
+          className="h-[100px] md:h-[150px] w-auto"
           style={{ filter: isDark ? 'invert(1)' : 'none' }}
         />
       </div>
