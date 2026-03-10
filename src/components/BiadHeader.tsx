@@ -1,4 +1,4 @@
-import { Sun, Moon } from "lucide-react";
+import dragonIcon from "@/assets/dragon-icon.png";
 import biadLogo from "/images/biad-logo.png";
 
 interface BiadHeaderProps {
