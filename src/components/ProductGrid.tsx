@@ -13,15 +13,11 @@ export interface Product {
 }
 
 const products: Product[] = [
-  { id: "1", name: "BIAD Long Sleeve Set", variant: "Black", price: 38000, image: blackLongsleeveSet },
-  { id: "2", name: "BIAD Long Sleeve", variant: "White / Grey", price: 22000, image: whiteGreyLongsleeve },
-  { id: "3", name: "BIAD Tee + Shorts", variant: "Black", price: 35000, image: blackTeeShorts },
-  { id: "4", name: "BIAD Tee + Shorts", variant: "Grey", price: 35000, image: greyTeeShorts },
-  { id: "5", name: "Nikes Na Me Na Swag", variant: "Graphic Tee", price: 18500, image: graphicTee },
-  { id: "6", name: "BIAD Polo", variant: "Maroon", price: 19000, image: maroonPolo },
-  { id: "7", name: "BIAD Polo", variant: "White", price: 19000, image: whitePolo },
-  { id: "8", name: "BIAD Polo", variant: "White + Red", price: 21000, image: whiteRedPolo },
-  { id: "9", name: "BIAD Polo", variant: "Black", price: 19000, image: blackPolo },
+  { id: "1", name: "BIAD Long Sleeve Set", variant: "Black / White", price: 38000, image: longsleeveSet },
+  { id: "2", name: "BIAD Tee + Shorts", variant: "Black", price: 35000, image: blackTeeShorts },
+  { id: "3", name: "BIAD Tee + Shorts", variant: "White", price: 35000, image: whiteTeeShorts },
+  { id: "4", name: "Real Eyes Realize Real Swag", variant: "Graphic Tee", price: 18500, image: graphicTee },
+  { id: "5", name: "Eternal x BIAD Polo", variant: "Collection", price: 19000, image: polosCollection },
 ];
 
 interface ProductGridProps {
