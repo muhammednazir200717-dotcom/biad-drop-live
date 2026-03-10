@@ -1,12 +1,8 @@
-import blackLongsleeveSet from "@/assets/products/black-longsleeve-set.jpg";
-import whiteGreyLongsleeve from "@/assets/products/white-grey-longsleeve.jpg";
-import blackTeeShorts from "@/assets/products/black-tee-shorts.jpg";
-import greyTeeShorts from "@/assets/products/grey-tee-shorts.jpg";
-import graphicTee from "@/assets/products/graphic-tee.jpg";
-import maroonPolo from "@/assets/products/maroon-polo.jpg";
-import whitePolo from "@/assets/products/white-polo.jpg";
-import whiteRedPolo from "@/assets/products/white-red-polo.jpg";
-import blackPolo from "@/assets/products/black-polo.jpg";
+import longsleeveSet from "@/assets/products/longsleeve-set.jpg";
+import blackTeeShorts from "@/assets/products/black-tee-shorts-new.jpg";
+import whiteTeeShorts from "@/assets/products/white-tee-shorts.jpg";
+import graphicTee from "@/assets/products/graphic-tee-new.jpg";
+import polosCollection from "@/assets/products/polos-collection.jpg";
 
 export interface Product {
   id: string;
