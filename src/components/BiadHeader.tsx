@@ -1,4 +1,4 @@
-import { Sun, Moon } from "lucide-react";
+import dragonIcon from "@/assets/dragon-icon.png";
 import biadLogo from "/images/biad-logo.png";
 
 interface BiadHeaderProps {
@@ -27,10 +27,10 @@ const BiadHeader = ({ isDark, onToggleTheme }: BiadHeaderProps) => {
       <div className="flex justify-end items-center gap-4">
         <button
           onClick={onToggleTheme}
-          className="border border-border p-2 flex items-center transition-colors hover:border-foreground"
+          className="border border-border p-2 flex items-center transition-all duration-300 hover:border-foreground hover:scale-110"
           title="Toggle theme"
         >
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          <img src={dragonIcon} alt="Toggle theme" className="w-5 h-5" style={{ filter: isDark ? 'none' : 'invert(1)' }} />
         </button>
         <div className="drop-pulse border border-border px-3 py-[7px]">
           <span className="font-body text-[9px] tracking-[4px] uppercase text-foreground">● DROP LIVE</span>
