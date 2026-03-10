@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "framework": "vite",
+  "env": {
+    "VITE_SUPABASE_URL": {
+      "description": "Your Supabase project URL"
+    },
+    "VITE_SUPABASE_PUBLISHABLE_KEY": {
+      "description": "Your Supabase anonymous key"
+    },
+    "VITE_SUPABASE_PROJECT_ID": {
+      "description": "Your Supabase project ID"
+    }
+  }
+}
