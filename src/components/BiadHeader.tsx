@@ -27,10 +27,10 @@ const BiadHeader = ({ isDark, onToggleTheme }: BiadHeaderProps) => {
       <div className="flex justify-end items-center gap-4">
         <button
           onClick={onToggleTheme}
-          className="border border-border p-2 flex items-center transition-all duration-300 hover:border-foreground hover:scale-110"
+          className="border border-border p-0 overflow-hidden flex items-center justify-center w-9 h-9 transition-all duration-300 hover:border-foreground hover:scale-110 bg-background"
           title="Toggle theme"
         >
-          <img src={dragonIcon} alt="Toggle theme" className="w-5 h-5" style={{ filter: isDark ? 'none' : 'invert(1)' }} />
+          <img src={dragonIcon} alt="Toggle theme" className="w-full h-full object-contain" style={{ filter: isDark ? 'none' : 'invert(1)' }} />
         </button>
         <div className="drop-pulse border border-border px-3 py-[7px]">
           <span className="font-body text-[9px] tracking-[4px] uppercase text-foreground">● DROP LIVE</span>
